@@ -105,7 +105,6 @@ import java.io.InputStreamReader
  fun main(args: Array<String>) = with (BufferedReader(InputStreamReader(System.`in`))) {
     val n: Int = readLine()!!.toInt()
     val arr = readLine()!!.split(' ').map { it.toInt() }
-
     var count: Int = 1
     var zero_count: Int = 0
 
