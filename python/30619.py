@@ -62,7 +62,6 @@ input = sys.stdin.readline
 
 n = int(input())
 arr = list(map(int, input().split()))
-copy = arr.copy()
 query_qty = int(input())
 lr = [list(map(int, input().split())) for _ in range(query_qty)]
 
@@ -75,8 +74,10 @@ for nums in lr:
     ranges = sorted([arr.index(student) for student in range(l, r+1)])
     sorted_values = sorted(arr[i] for i in ranges)
 
-    for idx, val in zip(ranges, sorted_values):
-        arr[idx] = val
+    r = arr
+    result = arr[:]
+    
+    for idx, value in zip(sorted(ranges), sorted_values):
+        result[idx] = value
 
-    print(*arr)
-    arr = copy
+    print(*result)
